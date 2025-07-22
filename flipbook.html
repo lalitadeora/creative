@@ -114,14 +114,51 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 background-color:rgba(250, 235, 215, 0.781);
 }
 .hi{
-    background-image: url(" https://miro.medium.com/max/900/1*xWKBV6AWlzlZuaJuYY2K9w.jpeg");
+    background-image: url(" https://i.pinimg.com/originals/7e/02/bc/7e02bc41ddda92726e4542c97e76bd9f.jpg");
      background-size: cover;
       background-position: center;  
-    opacity: 0.6;      
+         
      font-weight: bold;   
  z-index: -1;       
 }
+ .fir{
+   background-size: cover;
+      background-position: center;  
+    
+     font-weight: bold;   
+   
+ 
+} 
+.fir img{
+   width: 600px;
+      height: 400px;
+}
 
+
+
+.back-cover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, #9e6320b2, #9c978738);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      font-size: 26px;
+      font-weight: bold;
+      color: #00000086;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+      z-index: -1;
+      border-radius:10x ;
+    }
+
+
+
+
+    
   </style>
 </head>
 <body >
@@ -151,25 +188,43 @@ background-color:rgba(250, 235, 215, 0.781);
 
 
 </div>
-    <div class="page hi"> <p > Hiee👋 आप से मिल कर अच्छा लगा।"! </p></div>
+    <div class="page fir"><img src="https://miro.medium.com/max/900/1*xWKBV6AWlzlZuaJuYY2K9w.jpeg"></p></div>
 
 
 
-   <div class="page"  style="gap: 20px;" >      
-          <img src="https://cdn.shopify.com/s/files/1/0070/7032/files/dalai-lama-quote.png?v=1706740038"> 
-       
+   <div class="page fir"   style="gap: 20px;" >      
+          <img src="https://www.w3schools.com/howto/img_nature_wide.jpg"> 
+        
         <p class="name" style=" margin-left: -140px;">Radhe Radhe !</p>
 
 
 </div>
+
+
+
+    <div class="page hi"> <p style="font-weight:8000; " > </p></div>
+
+ 
+   <div class="back-cover" id="backCover">
+     Hiee👋 आप से मिल कर अच्छा लगा।"!  
+  <br>
+  Stay With Smil & Chill Mind 🐰!
+   
+    </div>
+
+   <audio controls autoplay loop>
+    <source src="https://example.com/krishna_bansuri.mp3" type="audio/mpeg">
+
+  </audio>
   </div>
+ </div>
 
   <div class="controls">
     <button onclick="prevPage()">⬅️ Previous</button>
     <button onclick="nextPage()">Next ➡️</button>
   </div>
 
-  <script>
+  <!-- <script>
     const pages = document.querySelectorAll('.page');
     let current = 0;
 
@@ -181,9 +236,42 @@ background-color:rgba(250, 235, 215, 0.781);
     }
 
     function prevPage() {
+      if (current =>0) {
+        current--;
+        pages[current].classList.remove('flipped');
+      }
+    }
+  </script> -->
+
+
+
+
+
+
+
+
+  <script>
+    const pages = document.querySelectorAll('.page');
+    const backCover = document.getElementById('backCover');
+    let current = 0;
+
+    function nextPage() {
+      if (current < pages.length) {
+        pages[current].classList.add('flipped');
+        current++;
+      }
+      if (current =>pages.length) {
+        backCover.style.display = 'flex';  // Show back cover
+      }
+    }
+
+    function prevPage() {
       if (current > 0) {
         current--;
         pages[current].classList.remove('flipped');
+      }
+      if (current < pages.length) {
+        backCover.style.display = 'none'; // Hide back cover
       }
     }
   </script>
