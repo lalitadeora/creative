@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url('https://i.pinimg.com/originals/af/81/c4/af81c49a90d3bca4898bc1cba5687337.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+    
+  justify-content: center;
+  align-items: center;
+}
+
+body img {
+       opacity: 0.15;
+      z-index: -1;
+}
+.birthday-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 2s ease;
+}
+
+
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+    }
+
+    .happy-text {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5em;
+      color: #ff1493;
+      opacity: 0;
+      animation: fadeIn 2s 1s forwards;
+      transform: translateY(-20px);
+    }
+
+    .cake {
+      width: 120px;
+      height: 130px;
+      margin: 30px auto 10px;
+      opacity: 0;
+      animation: fadeIn 2s 3s forwards;
+      position: relative;
+    }
+
+    .cake .base {
+      width: 100%;
+      height: 70%;
+      background: #ff69b4;
+      border-radius: 10px;
+      position: absolute;
+      bottom: 0;
+    }
+
+    .cake .top {
+      width: 80%;
+      height: 30%;
+      background: #fff;
+      border-radius: 10px 10px 0 0;
+      position: absolute;
+      top: 0;
+      left: 10%;
+    }
+
+    .cake .candle {
+      width: 8px;
+      height: 25px;
+      background: #444;
+      position: absolute;
+      top: -25px;
+      left: calc(50% - 4px);
+    }
+
+    .cake .flame {
+      width: 15px;
+      height: 15px;
+      background: gold;
+      border-radius: 50%;
+      position: absolute;
+      top: -35px;
+      left: calc(50% - 7.5px);
+      animation: flicker 1s infinite alternate;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #444;
+      opacity: 0;
+      animation: fadeIn 2s 5s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes flicker {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.2); opacity: 0.6; }
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <div class="bg"></div>
+
+  <div class="card">
+    <div class="happy-text">🎉 Happy Birthday! 🐰🎉</div>
+
+    <div class="cake">
+      <div class="flame"></div>
+      <div class="candle"></div>
+      <div class="top"></div>
+      <div class="base"></div>
+    </div>
+
+    <div class="message">
+      May your day be as beautiful and sweet as you are! 💖<br>
+      Wishing you love, smiles, and cake! 🎂
+    </div>
+  </div>
+
+  <!-- Optional Music -->
+  <audio autoplay loop>
+  <source src="https://pagalnew.com/songs/saibo-shor-in-the-city.mp3" type="audio/mpeg">
+</audio>
+
+</body>
+</html>
