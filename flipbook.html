@@ -11,11 +11,8 @@
       align-items: center;
       height: 100vh;
       background: linear-gradient(to top left, #e0f7fa, #fff3e0);
-
       font-family: sans-serif;
-    
-  }
-
+    }
 
     .bg-image {
       background-image: url("https://vibecrafts.com/cdn/shop/files/radhe-krishna-modern-art-premium-canvas-wall-painting-PTVCH_2755_Black_1_500ed899-f9bc-468c-bab5-1e50431f2edf.jpg?v=1741609435&width=1946");
@@ -36,7 +33,6 @@
       height: 400px;
       position: relative;
       perspective: 2000px;
-       
     }
 
     .page {
@@ -55,19 +51,12 @@
       backface-visibility: hidden;
       border: 2px solid #ccc;
       border-radius: 10px;
+      flex-wrap: wrap;
     }
 
-    .page:nth-child(1) {
-      z-index: 3;
-    }
-
-    .page:nth-child(2) {
-      z-index: 2;
-    }
-
-    .page:nth-child(3) {
-      z-index: 1;
-    }
+    .page:nth-child(1) { z-index: 3; }
+    .page:nth-child(2) { z-index: 2; }
+    .page:nth-child(3) { z-index: 1; }
 
     .flipped {
       transform: rotateY(-180deg);
@@ -95,48 +84,48 @@
       background: #0288d1;
     }
 
-
-     .page img{
-        box-shadow: 20px 14px  10px 25px rgba(71, 97, 167, 0.39);
+    .page img {
+      box-shadow: 20px 14px 10px 25px rgba(71, 97, 167, 0.39);
+      max-width: 100%;
+      height: auto;
     }
+
     .name {
-        font-style: italic;
-        font-variant: initial;
-       margin-bottom: -300px;
-      
+      font-style: italic;
+      font-variant: initial;
+      margin-bottom: -300px;
     }
-    
-    .ss{
-font-size: 30px;
-font-weight: bold;
-font-style: italic;
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-background-color:rgba(250, 235, 215, 0.781);
-}
-.hi{
-    background-image: url(" https://i.pinimg.com/originals/7e/02/bc/7e02bc41ddda92726e4542c97e76bd9f.jpg");
-     background-size: cover;
-      background-position: center;  
-         
-     font-weight: bold;   
- z-index: -1;       
-}
- .fir{
-   background-size: cover;
-      background-position: center;  
-    
-     font-weight: bold;   
-   
- 
-} 
-.fir img{
-   width: 600px;
+
+    .ss {
+      font-size: 30px;
+      font-weight: bold;
+      font-style: italic;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      background-color: rgba(250, 235, 215, 0.781);
+    }
+
+    .hi {
+      background-image: url("https://i.pinimg.com/originals/7e/02/bc/7e02bc41ddda92726e4542c97e76bd9f.jpg");
+      background-size: cover;
+      background-position: center;
+      font-weight: bold;
+      z-index: -1;
+    }
+
+    .fir {
+      background-size: cover;
+      background-position: center;
+      font-weight: bold;
+    }
+
+    .fir img {
+      width: 600px;
       height: 400px;
-}
+      max-width: 100%;
+      height: auto;
+    }
 
-
-
-.back-cover {
+    .back-cover {
       position: absolute;
       top: 0;
       left: 0;
@@ -152,128 +141,143 @@ background-color:rgba(250, 235, 215, 0.781);
       border: 1px solid #ccc;
       box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
       z-index: -1;
-      border-radius:10x ;
+      border-radius: 10px;
     }
 
+    audio {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 300px;
+    }
 
+    /* 🔁 Responsive Design Starts Here */
+    @media (max-width: 768px) {
+      .book {
+        width: 90%;
+        height: auto;
+      }
 
+      .page {
+        font-size: 16px;
+        padding: 15px;
+      }
 
-    
+      .fir img {
+        width: 100%;
+        height: auto;
+      }
+
+      .name {
+        margin-bottom: -150px;
+        font-size: 16px;
+      }
+
+      .controls button {
+        width: 100px;
+        font-size: 14px;
+      }
+
+      audio {
+        width: 90%;
+        left: 5%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page {
+        font-size: 14px;
+        padding: 10px;
+        flex-direction: column;
+      }
+
+      .controls button {
+        padding: 8px 12px;
+        margin: 5px;
+      }
+
+      .name {
+        margin-bottom: -100px;
+        font-size: 14px;
+      }
+
+      audio {
+        width: 95%;
+        left: 2.5%;
+      }
+    }
   </style>
 </head>
-<body >
-
-
+<body>
 
 <div class="bg-image"></div>
 
+<div class="book" id="book">
+  <div class="page ss">
+    <p>ॐ कृष्णाय वासुदेवाय हरये परमात्मने॥ <br>
+    प्रार्थना: क्लेनाशाय गोविंदाय नमो नम:॥</p>
+  </div>
 
-      <div class="book" id="book">
-    <div class="page ss" >
-     
-  <p  > ॐ कृष्णाय वासुदेवाय हरये परमात्मने॥
-प्रार्थना: क्लेनाशाय गोविंदाय नमो नम:॥</p>
-        </div>
+  <div class="page" style="gap: 20px;">      
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd9jMs8RDyHr3qSMY-1r8xLq_yyE9mLsSBjQ&s"> 
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd9jMs8RDyHr3qSMY-1r8xLq_yyE9mLsSBjQ&s">
+    <p class="name" style="margin-left: -140px;">Radhe Radhe !</p>
+  </div>
 
+  <div class="page fir">
+    <img src="https://miro.medium.com/max/900/1*xWKBV6AWlzlZuaJuYY2K9w.jpeg">
+  </div>
 
+  <div class="page fir" style="gap: 20px;">      
+    <img src="https://www.w3schools.com/howto/img_nature_wide.jpg"> 
+    <p class="name" style="margin-left: -140px;">Radhe Radhe !</p>
+  </div>
 
+  <div class="page hi">
+    <p style="font-weight:8000;"></p>
+  </div>
 
+  <div class="back-cover" id="backCover">
+    Hiee👋 आप से मिल कर अच्छा लगा।"!  
+    <br>
+    Stay With Smile & Chill Mind 🐰!
+  </div>
 
-
-
-    <div class="page"  style="gap: 20px;" >      
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd9jMs8RDyHr3qSMY-1r8xLq_yyE9mLsSBjQ&s"> 
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd9jMs8RDyHr3qSMY-1r8xLq_yyE9mLsSBjQ&s">
-        <p class="name" style=" margin-left: -140px;">Radhe Radhe !</p>
-
-
-</div>
-    <div class="page fir"><img src="https://miro.medium.com/max/900/1*xWKBV6AWlzlZuaJuYY2K9w.jpeg"></p></div>
-
-
-
-   <div class="page fir"   style="gap: 20px;" >      
-          <img src="https://www.w3schools.com/howto/img_nature_wide.jpg"> 
-        
-      
-
-
-</div>
-
-
-
-    <div class="page hi"> <p style="font-weight:8000; " > </p></div>
-
- 
-   <div class="back-cover" id="backCover">
-     Hiee👋 आप से मिल कर अच्छा लगा।"!  
-  <br>
-  Stay With Smil & Chill Mind 🐰!
-   
-    </div>
-
-   <audio controls autoplay loop>
+  <audio controls autoplay loop>
     <source src="https://example.com/krishna_bansuri.mp3" type="audio/mpeg">
-
   </audio>
-  </div>
- </div>
+</div>
 
-  <div class="controls">
-    <button onclick="prevPage()">⬅️ Previous</button>
-    <button onclick="nextPage()">Next ➡️</button>
-  </div>
+<div class="controls">
+  <button onclick="prevPage()">⬅️ Previous</button>
+  <button onclick="nextPage()">Next ➡️</button>
+</div>
 
-  <!-- <script>
-    const pages = document.querySelectorAll('.page');
-    let current = 0;
+<script>
+  const pages = document.querySelectorAll('.page');
+  const backCover = document.getElementById('backCover');
+  let current = 0;
 
-    function nextPage() {
-      if (current < pages.length) {
-        pages[current].classList.add('flipped');
-        current++;
-      }
+  function nextPage() {
+    if (current < pages.length) {
+      pages[current].classList.add('flipped');
+      current++;
     }
-
-    function prevPage() {
-      if (current =>0) {
-        current--;
-        pages[current].classList.remove('flipped');
-      }
+    if (current >= pages.length) {
+      backCover.style.display = 'flex';
     }
-  </script> -->
+  }
 
-
-
-
-
-
-
-
-  <script>
-    const pages = document.querySelectorAll('.page');
-    const backCover = document.getElementById('backCover');
-    let current = 0;
-
-    function nextPage() {
-      if (current < pages.length) {
-        pages[current].classList.add('flipped');
-        current++;
-      }
-      if (current =>pages.length) {
-        backCover.style.display = 'flex';  // Show back cover
-      }
+  function prevPage() {
+    if (current > 0) {
+      current--;
+      pages[current].classList.remove('flipped');
     }
-
-    function prevPage() {
-      if (current > 0) {
-        current--;
-        pages[current].classList.remove('flipped');
-      }
-      if (current < pages.length) {
-        backCover.style.display = 'none'; // Hide back cover
-      }
+    if (current < pages.length) {
+      backCover.style.display = 'none';
     }
-  </script>
+  }
+</script>
+
 </body>
 </html>
